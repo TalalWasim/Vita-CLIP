@@ -1,0 +1,10 @@
+__pycache__
+*.py[cod]
+*$py.class
+
+slurm-*
+
+train_output/
+pretrained/
+
+video_dataset/io_internal.py

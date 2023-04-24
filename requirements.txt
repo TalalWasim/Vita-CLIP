@@ -1,0 +1,9 @@
+av==9.2.0
+einops==0.4.1
+ftfy==6.1.1
+numpy==1.22.3
+Pillow==9.0.1
+regex==2022.9.13
+setuptools==61.2.0
+torch==1.14.0.dev20221017
+torchvision==0.15.0.dev20221017
