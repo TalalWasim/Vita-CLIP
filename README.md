@@ -16,5 +16,5 @@ Through this prompting scheme, we can achieve state-of-the-art zero-shot perform
 
 
 <p align="center">
-  <img alt="intro_image" src="figs/intro.png" width="400"/>
+  <img alt="intro_image" src="figs/intro.png" width="300"/>
 </p>
