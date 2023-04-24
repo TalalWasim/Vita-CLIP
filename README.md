@@ -18,3 +18,12 @@ Through this prompting scheme, we can achieve state-of-the-art zero-shot perform
 <p align="center">
   <img alt="intro_image" src="figs/intro.png" width="300"/>
 </p>
+
+## Environment Setup
+Refer to `requirements.txt` for installing all python dependencies. We use python 3.7 with pytorch 1.7.1. 
+
+## Supervised Training
+
+### Dataset
+
+We download the official version of Kinetics-400 from [here](https://github.com/cvdfoundation/kinetics-dataset) and videos are resized using code [here](https://github.com/open-mmlab/mmaction2/tree/master/tools/data/kinetics).
