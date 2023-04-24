@@ -24,10 +24,10 @@ Through this prompting scheme, we can achieve state-of-the-art zero-shot perform
 
 April 24 2023: Released supervised training code for Vita-CLIP (stay tuned for zeroshot evaluation scripts and pretrained checkpoints)
 
-Jan 17 2022: Released CC3M/CC12M CLIP/SLIP ViT-B checkpoints
 
 ## Environment Setup
 Refer to `requirements.txt` for installing all python dependencies. We use python 3.8.13 with pytorch 1.14.0. 
+
 
 ## Supervised Training
 
@@ -62,9 +62,11 @@ For supervised training on the Kinetics-400 dataset, use the train script in the
 
 *Scripts for zeroshot evaluation will be released soon*
 
+
 ## Pretrained Checkpoints
 
 *Pretrained Checkpoints will be released soon*
+
 
 ## Citation
 If you find our work, this repository, or pretrained models useful, please consider giving a star :star: and citation.
