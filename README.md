@@ -20,10 +20,49 @@ Through this prompting scheme, we can achieve state-of-the-art zero-shot perform
 </p>
 
 ## Environment Setup
-Refer to `requirements.txt` for installing all python dependencies. We use python 3.7 with pytorch 1.7.1. 
+Refer to `requirements.txt` for installing all python dependencies. We use python 3.8.13 with pytorch 1.14.0. 
 
 ## Supervised Training
 
-### Dataset
+### Dataset Preparation
 
 We download the official version of Kinetics-400 from [here](https://github.com/cvdfoundation/kinetics-dataset) and videos are resized using code [here](https://github.com/open-mmlab/mmaction2/tree/master/tools/data/kinetics).
+
+We expect that `--train_list_path` and `--val_list_path` command line arguments to be a data list file of the following format
+```
+<path_1>,<label_1>
+<path_2>,<label_2>
+...
+<path_n>,<label_n>
+```
+where `<path_i>` points to a video file, and `<label_i>` is an integer between `0` and `num_classes - 1`.
+`--num_classes` should also be specified in the command line argument.
+
+Additionally, `<path_i>` might be a relative path when `--data_root` is specified, and the actual path will be
+relative to the path passed as `--data_root`.
+
+The class mappings in the open-source weights are provided at [Kinetics-400 class mappings](data/k400_class_mappings.json)
+
+### Download Pretrained CLIP Checkpoint
+
+Download the pretrained CLIP checkpoint and place under the `pretrained directory`.
+
+### Training Instruction
+
+For supervised training on the Kinetics-400 dataset, use the train script in the `train_scripts` directory. Modify the `--train_list_path`, `--train_list_val` according to the data location and modify the `--backbone_path` according to location where the pretrained checkpoint was downloaded and stored.
+
+
+## Citation
+If you find our work, this repository, or pretrained models useful, please consider giving a star :star: and citation.
+```bibtex
+@inproceedings{wasim2023vitaclip,
+    title={Vita-CLIP: Video and text adaptive CLIP via Multimodal Prompting}, 
+    author={Syed Talal Wasim and Muzammal Naseer and Salman Khan and Fahad Shahbaz Khan and Mubarak Shah},
+    booktitle={CVPR},
+    year={2023}
+  }
+```
+
+
+## Acknowledgements
+Our code is based on [EVL](https://github.com/OpenGVLab/efficient-video-recognition) and [XCLIP](https://github.com/microsoft/VideoX/tree/master/X-CLIP) repositories. We thank the authors for releasing their code. If you use our model, please consider citing these works as well.
