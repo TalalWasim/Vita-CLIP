@@ -62,9 +62,9 @@ For supervised training on the Kinetics-400 dataset, use the train script in the
 
 *Scripts for zeroshot evaluation will be released soon*
 
-## Pretrained Checkpoints
+## Pretrained Models
 
-*Pretrained Checkpoints will be released soon*
+*Pretrained Models will be released soon*
 
 
 ## Citation
