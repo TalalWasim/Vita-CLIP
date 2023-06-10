@@ -22,7 +22,7 @@ Through this prompting scheme, we can achieve state-of-the-art zero-shot perform
 
 ## Updates:
 
-April 24 2023: Released supervised training code for Vita-CLIP (stay tuned for zeroshot evaluation scripts and pretrained checkpoints)
+April 24 2023: Released supervised training code for Vita-CLIP (stay tuned for zeroshot evaluation scripts and pretrained models)
 
 
 ## Environment Setup
@@ -61,7 +61,6 @@ For supervised training on the Kinetics-400 dataset, use the train script in the
 ## Zeroshot Evaluation
 
 *Scripts for zeroshot evaluation will be released soon*
-
 
 ## Pretrained Checkpoints
 
