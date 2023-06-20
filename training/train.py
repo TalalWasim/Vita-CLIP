@@ -259,7 +259,7 @@ def main():
             evaluate(model, val_loader)
             model.train()
 
-        if (i + 1) % args.save_freq == 0:
+        if (i + 1) % args.save_freq == 0 and dist.get_rank() == 0:
             checkpoint.save_checkpoint(model, optimizer, lr_sched, loss_scaler, i + 1, args)
         
         batch_st = datetime.now()
