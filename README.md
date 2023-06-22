@@ -64,7 +64,7 @@ For supervised training on the Kinetics-400 dataset, use the train script in the
 
 ## Pretrained Models
 
-*Pretrained Models will be released soon*
+Vita-CLIP-B checkpoint can be downloaded **[here](https://drive.google.com/file/d/1ArrbJnydQwY_mGa1DKyhs5s0SYdBhF2r/view?usp=sharing)**.
 
 
 ## Citation
