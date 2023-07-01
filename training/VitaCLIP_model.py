@@ -101,8 +101,9 @@ class VitaCLIP(nn.Module):
                 transformer_layers=text_transformer_layers,
             )
         
-        ckpt = torch.load(backbone_path)
-        self.load_state_dict(ckpt, strict=False)
+        if backbone_path:
+            ckpt = torch.load(backbone_path)
+            self.load_state_dict(ckpt, strict=False)
 
         if self.use_text_prompt_learning:
             with open(text_prompt_classes_path, 'r') as f:

@@ -14,6 +14,8 @@ import video_dataset
 import checkpoint
 from VitaCLIP_model import VitaCLIP
 
+from collections import OrderedDict
+
 def setup_print(is_master: bool):
     """
     This function disables printing when not in master process
@@ -56,9 +58,11 @@ def main():
                         help='optionally split the batch into smaller shards and forward/backward one shard '
                              'at a time to avoid out-of-memory error.')
 
-    # backbone path
+    # backbone and checkpoint paths
     parser.add_argument('--backbone_path', type=str,
-                        help='path to pretrained backbone weights')
+                        help='path to pretrained backbone weights', default='')
+    parser.add_argument('--checkpoint_path', type=str,
+                        help='path to pretrained checkpoint weights', default=None)
     
     # model params
     parser.add_argument('--patch_size', type=int, default=16,
@@ -173,6 +177,12 @@ def main():
         zeroshot_evaluation=args.zeroshot_evaluation,
         zeroshot_text_features_path=args.zeroshot_text_features_path,
     )
+
+    if args.checkpoint_path:
+        print('loading checkpoint')
+        ckpt = torch.load(args.checkpoint_path, map_location='cpu')
+        renamed_ckpt = OrderedDict((k[len("module."):], v) for k, v in ckpt['model'].items() if k.startswith("module."))
+        model.load_state_dict(renamed_ckpt, strict=True)
     
     
     print(model)
